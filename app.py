@@ -1,20 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-from flask_mail import Mail, Message
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 import os
 
 app = Flask(__name__)
 app.secret_key = 'your-secret-key-here-change-in-production'
-
-# ===== EMAIL CONFIGURATION =====
-# Replace these with your actual email settings
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'eman.awad.hamdaan.pt@gmail.com'  # YOUR EMAIL
-app.config['MAIL_PASSWORD'] = 'cfazcoibkeaiwthm'  # YOU NEED TO GENERATE THIS
-app.config['MAIL_DEFAULT_SENDER'] = 'eman.awad.hamdaan.pt@gmail.com'  # YOUR EMAIL
-
-mail = Mail(app)
 
 
 @app.route('/')
@@ -154,22 +145,22 @@ def home():
             'nationality': 'Pakistan',
             'dob': '04 Jul 1982',
             'visa_status': 'Residence Card Holder',
-            'country_of_residence': 'Portugal',  # ← ADDED
+            'country_of_residence': 'Portugal',
             'marital_status': 'Married',
             'driving_license': 'Light Vehicle, Motor Bike',
-            'contact_number': '+351 9XX XXX XXX'  # ← ADDED (update with your number)
+            'contact_number': '+351 9XX XXX XXX'
         },
 
         'links': {
             'linkedin': 'https://www.linkedin.com/feed/',
             'github': 'https://github.com/your-profile',
-            'email': 'mailto:eman.awad.hamdaan.pt@gmail.com'  # ← UPDATED with your email
+            'email': 'mailto:eman.awad.hamdaan.pt@gmail.com'
         }
     }
     return render_template('index.html', **context)
 
 
-# ===== CONTACT ROUTE =====
+# ===== CONTACT ROUTE (Using smtplib with better error handling) =====
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
@@ -182,22 +173,43 @@ def contact():
             return redirect(url_for('contact'))
 
         try:
-            # Send email
-            msg = Message(
-                subject=f"New Message from {name} - Portfolio Contact",
-                recipients=['eman.awad.hamdaan.pt@gmail.com'],  # ← YOUR EMAIL
-                body=f"""
-                Name: {name}
-                Email: {email}
-                Message:
-                {message}
-                """
-            )
-            mail.send(msg)
+            # Email configuration
+            sender_email = 'eman.awad.hamdaan.pt@gmail.com'
+            sender_password = 'cfazcoibkeaiwthm'  # Your App Password
+            recipient_email = 'eman.awad.hamdaan.pt@gmail.com'
+
+            # Create message
+            msg = MIMEMultipart()
+            msg['From'] = sender_email
+            msg['To'] = recipient_email
+            msg['Subject'] = f"New Message from {name} - Portfolio Contact"
+
+            body = f"""
+            Name: {name}
+            Email: {email}
+            Message:
+            {message}
+            """
+            msg.attach(MIMEText(body, 'plain'))
+
+            # Send email with timeout
+            server = smtplib.SMTP('smtp.gmail.com', 587, timeout=30)
+            server.starttls()
+            server.login(sender_email, sender_password)
+            server.send_message(msg)
+            server.quit()
+
             flash('Thank you! Your message has been sent successfully.', 'success')
             return redirect(url_for('contact'))
+        except smtplib.SMTPAuthenticationError:
+            flash('Email authentication failed. Please check your email settings.', 'error')
+            return redirect(url_for('contact'))
+        except smtplib.SMTPException as e:
+            flash(f'Email server error: {str(e)}', 'error')
+            return redirect(url_for('contact'))
         except Exception as e:
-            flash(f'Error sending message: {str(e)}', 'error')
+            print(f"Error: {str(e)}")
+            flash('Error sending message. Please try again later or contact me directly via email.', 'error')
             return redirect(url_for('contact'))
 
     return render_template('contact.html',
