@@ -39,6 +39,7 @@ def home():
                 'period': '2020 - Present',
                 'description': [
                     'Directed end-to-end operations across travel, financial services, and workforce solutions',
+                    'Directed end-to-end operations across travel, financial services, and workforce solutions',
                     'Led and developed a team of 40+ employees, driving performance and productivity',
                     'Managed financial operations including budgeting, cash flow, and regulatory compliance',
                     'Oversaw travel management, visa processing, and international money transfers',

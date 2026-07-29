@@ -1,7 +1,7 @@
 /* ===== IMPORTS ===== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-/* ===== RESET ===== */
+/* ===== RESET & BASE ===== */
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background: rgb(10 10 15 / 1);
+    background: #0a0a0f; /* Pure deep dark background */
     color: #e0e0e0;
     overflow-x: hidden;
     line-height: 1.7;
@@ -414,7 +414,7 @@ body {
 
 /* ===== STATISTICS ===== */
 .stats-section {
-    padding: 60px 0;
+    padding: 80px 0;
     background: rgba(255, 255, 255, 0.02);
 }
 
@@ -446,7 +446,7 @@ body {
 }
 
 .stat-number .counter {
-    background: linear-gradient(135deg, #ffffff, #e94560);
+    background: linear-gradient(135deg, #e94560, #ff6b8a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -460,6 +460,7 @@ body {
 /* ===== TARGET POSITIONS ===== */
 .target-section {
     padding: 80px 0;
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .target-tags {
@@ -524,18 +525,23 @@ body {
     height: 16px;
     background: #e94560;
     border-radius: 50%;
-    border: 3px solid #1a1a2e;
+    border: 3px solid #0a0a0f;
     box-shadow: 0 0 20px rgba(233, 69, 96, 0.3);
 }
 
 .timeline-content {
     padding: 30px;
     border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .timeline-content:hover {
     transform: translateX(10px);
+    border-color: rgba(233, 69, 96, 0.3);
 }
 
 .timeline-header {
@@ -605,6 +611,7 @@ body {
 /* ===== SKILLS ===== */
 .skills-section {
     padding: 80px 0;
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .skills-grid {
@@ -616,6 +623,8 @@ body {
 .skill-card {
     padding: 30px;
     border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .skill-card h4 {
@@ -698,6 +707,8 @@ body {
 .edu-card {
     padding: 30px;
     border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     text-align: center;
     transition: all 0.3s ease;
 }
@@ -731,6 +742,7 @@ body {
 /* ===== INFO SECTION ===== */
 .info-section {
     padding: 80px 0;
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .info-grid {
@@ -742,6 +754,8 @@ body {
 .info-card {
     padding: 30px;
     border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .info-card h3 {
@@ -889,7 +903,6 @@ body {
     z-index: 2;
 }
 
-/* Contact Info */
 .contact-info {
     padding-top: 20px;
 }
@@ -950,10 +963,11 @@ body {
     border: 1px solid rgba(233, 69, 96, 0.2);
 }
 
-/* Contact Form */
 .contact-form-wrapper {
     padding: 40px;
     border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .contact-form-wrapper h2 {
@@ -1045,37 +1059,6 @@ body {
     border: 1px solid rgba(233, 69, 96, 0.2);
 }
 
-/* ===== RESPONSIVE CONTACT ===== */
-@media (max-width: 1024px) {
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .contact-info {
-        text-align: center;
-    }
-
-    .contact-details {
-        align-items: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .contact-title {
-        font-size: 2.2rem;
-    }
-
-    .contact-form-wrapper {
-        padding: 25px;
-    }
-
-    .contact-form-wrapper h2 {
-        font-size: 1.4rem;
-    }
-}
-
-
 /* ===== COMPANY LOGOS ===== */
 .company-wrapper {
     display: flex;
@@ -1098,40 +1081,7 @@ body {
     transform: scale(1.1);
 }
 
-/* ===== WATERMARK LOGO (Background) ===== */
-.timeline-content {
-    position: relative;
-    overflow: hidden;
-}
-
-.timeline-content .watermark-logo {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    opacity: 0.06;
-    font-size: 80px;
-    pointer-events: none;
-    z-index: 0;
-    color: #e94560;
-}
-
-.timeline-content .watermark-logo img {
-    width: 80px;
-    height: 80px;
-    opacity: 0.08;
-    filter: grayscale(100%);
-}
-
-/* Make sure content stays above watermark */
-.timeline-content > * {
-    position: relative;
-    z-index: 1;
-}
-
-
-
-/*      BELOW PART IS FOR   WATER MARKS  */
-
+/* ===== WATERMARK LOGO ===== */
 .watermark-logo {
     position: absolute;
     right: 20px;
@@ -1145,7 +1095,10 @@ body {
     letter-spacing: 5px;
 }
 
-
+.timeline-content > * {
+    position: relative;
+    z-index: 1;
+}
 
 /* ===== WHATSAPP BUTTON ===== */
 .btn-whatsapp {
@@ -1181,9 +1134,6 @@ body {
     color: #25D366;
 }
 
-
-
-
 /* ===== FLOATING WHATSAPP ICON ===== */
 .whatsapp-float {
     position: fixed;
@@ -1209,4 +1159,107 @@ body {
 
 .whatsapp-float svg {
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-description {
+        margin: 0 auto 30px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .education-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-details {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(10, 10, 15, 0.98);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        transition: left 0.3s ease;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-title {
+        font-size: 2.2rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 25px;
+    }
+
+    .contact-form-wrapper h2 {
+        font-size: 1.4rem;
+    }
 }
