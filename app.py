@@ -159,7 +159,8 @@ def home():
         'links': {
             'linkedin': 'https://www.linkedin.com/feed/',
             'github': 'https://github.com/your-profile',
-            'email': 'mailto:eman.awad.hamdaan.pt@gmail.com'
+            'email': 'mailto:eman.awad.hamdaan.pt@gmail.com',
+            'whatsapp': 'https://wa.me/351920008127'  # ← ADD THIS
         }
     }
     return render_template('index.html', **context)
