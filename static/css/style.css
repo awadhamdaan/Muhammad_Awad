@@ -1263,3 +1263,213 @@ body {
         font-size: 1.4rem;
     }
 }
+
+
+
+
+/* ===== WHATSAPP BUTTON ===== */
+.btn-whatsapp {
+    display: inline-block;
+    padding: 14px 35px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+}
+
+/* ===== WHATSAPP FOOTER LINK ===== */
+.whatsapp-link {
+    background: rgba(37, 211, 102, 0.1);
+    border-color: rgba(37, 211, 102, 0.2);
+    color: #25D366;
+}
+
+.whatsapp-link:hover {
+    background: rgba(37, 211, 102, 0.2);
+    border-color: #25D366;
+    color: #25D366;
+}
+
+/* ===== COMPANY LOGOS ===== */
+.company-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.company-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px;
+    transition: transform 0.3s ease;
+}
+
+.company-logo:hover {
+    transform: scale(1.1);
+}
+
+/* ===== PROJECT LINKS ===== */
+.project-links {
+    display: flex;
+    gap: 15px;
+    margin: 10px 0 15px 0;
+    flex-wrap: wrap;
+}
+
+.project-link {
+    color: #e94560;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 4px 14px;
+    border: 1px solid rgba(233, 69, 96, 0.2);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.project-link:hover {
+    background: rgba(233, 69, 96, 0.1);
+    border-color: #e94560;
+    transform: translateY(-2px);
+}
+
+/* ===== SOFTWARE SECTION ===== */
+.software-section {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.software-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 1024px) {
+    .software-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .software-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.software-card {
+    padding: 30px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.software-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(233, 69, 96, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.software-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.software-title {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.software-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tech-tag {
+    background: rgba(233, 69, 96, 0.15);
+    color: #e94560;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(233, 69, 96, 0.15);
+}
+
+.software-list {
+    list-style: none;
+    margin-top: 5px;
+}
+
+.software-list li {
+    padding: 6px 0;
+    padding-left: 22px;
+    position: relative;
+    color: #c0c0d0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.software-list li::before {
+    content: "▹";
+    color: #00b894;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.software-note {
+    padding: 25px 30px;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid rgba(233, 69, 96, 0.1);
+}
+
+.software-note p {
+    color: #c0c0d0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.software-note strong {
+    color: #e94560;
+}
+
+/* ===== RESPONSIVE FIXES ===== */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn-primary, .btn-secondary, .btn-whatsapp {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+

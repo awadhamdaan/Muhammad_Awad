@@ -12,8 +12,11 @@ app.secret_key = 'your-secret-key-here-change-in-production'
 def home():
     context = {
         'name': 'Muhammad Awad Yasin',
-        'title': 'Operations & Business Support Manager',
-        'summary': 'Operations/Business Account Management, Business Development Professional with 20+ years of experience across Pakistan, the UAE, Saudi Arabia, and Portugal. Proven expertise in operations management, finance, customer experience, compliance, process improvement, and team leadership.',
+        'title': 'Operations & Business Support Manager | Full-Stack Developer',
+        'summary': 'Operations/Business Account Management, Business Development Professional with 20+ years of experience across Pakistan, the UAE, Saudi Arabia, and Portugal. Proven expertise in operations management, finance, customer experience, compliance, process improvement, and team leadership. '
+                   'Now successfully transitioning into Full-Stack Python Development, having built and deployed real-world web applications using Django, PostgreSQL, HTML, CSS, JavaScript, and Git/GitHub. '
+                   'Designed and developed Marhaba Super Market & Services — a multi-module business platform integrating e-commerce, travel booking, remittance services, and CV building — as well as a desktop ERP application for fleet management. '
+                   'Seeking to bring my international experience and technical skills to a progressive organization in the Netherlands.',
 
         'stats': {
             'experience': '20+',
@@ -26,10 +29,12 @@ def home():
             'Operations Manager', 'Business Manager', 'Customer Experience Manager',
             'Office Manager', 'Finance & Operations', 'Business Support Manager',
             'Quality Control Manager', 'Operations Coordinator', 'Operations Analyst',
-            'Process Improvement Specialist', 'Project Coordinator', 'Data Analyst'
+            'Process Improvement Specialist', 'Project Coordinator', 'Data Analyst',
+            'Full-Stack Python Developer', 'Django Developer'
         ],
 
         'experience': [
+            # ===== CURRENT ROLE =====
             {
                 'about_company': "Lifecent Unipessoal is a Portugal-based parent company overseeing multiple business divisions, including LTMT Travels & Money Transfers, which provides travel management, visa consultancy, foreign exchange, and international money transfer services, and Uma Iniciativa, which specializes in workforce recruitment, labor supply, international hiring, work permit processing, and staffing solutions.",
                 'title': 'Operations Manager',
@@ -39,13 +44,101 @@ def home():
                 'period': '2020 - Present',
                 'description': [
                     'Directed end-to-end operations across travel, financial services, and workforce solutions',
-                    'Directed end-to-end operations across travel, financial services, and workforce solutions',
                     'Led and developed a team of 40+ employees, driving performance and productivity',
                     'Managed financial operations including budgeting, cash flow, and regulatory compliance',
                     'Oversaw travel management, visa processing, and international money transfers',
                     'Built relationships with 60+ retail and corporate clients'
                 ]
             },
+
+            # ===== MARHABA SUPER MARKET & SERVICES =====
+            {
+                'about_company': "Marhaba Super Market & Services is a subsidiary of Lifecent Unipessoal, operating a multi-module business platform integrating e-commerce, service management, travel booking, and custom software development.",
+                'title': 'Full-Stack Python/Django Developer',
+                'company': 'Marhaba Super Market & Services',
+                'logo': 'marhaba.png',
+                'location': 'Portugal',
+                'period': '2026 - Present',
+                'project_urls': [
+                    {'name': '🛒 Super Market', 'url': 'https://marhaba-market-services.com/'},
+                    {'name': '🛠️ Marhaba Services', 'url': 'https://marhaba-market-services.com/marhaba-services/'}
+                ],
+                'description': [
+                    'Designed and developed a multi-module web-based business platform using Python, Django, PostgreSQL, HTML, CSS, JavaScript, Git/GitHub and Render, integrating e-commerce and service-management functionality within a single application.',
+                    'Developed a modular Django architecture covering customer accounts, product catalog, inventory, shopping cart, wishlist, orders, payments, coupons and customer reviews.',
+                    'Designed and implemented a PostgreSQL relational database with Django ORM models and administrative management through Django Admin.',
+                    'Developed Marhaba Services, providing a central platform for travel, remittance and other customer services.',
+                    'Built a CV Builder allowing structured user information to be converted into professionally formatted CV output.',
+                    'Developed customer-facing forms, validation, business rules, responsive interfaces and administrative workflows.',
+                    'Implemented environment-based configuration for local development and production deployment.',
+                    'Used Git and GitHub for source control and deployed the production application using Render and PostgreSQL.',
+                    'Structured the project using reusable Django applications to support future expansion and third-party API integrations.'
+                ]
+            },
+
+            # ===== MARHABA TRAVEL BOOKING SYSTEM =====
+            {
+                'about_company': "Marhaba Travel Booking & Airline Ticketing System is part of the Marhaba Services platform, providing end-to-end airline reservation, ticketing and post-booking management.",
+                'title': 'Full-Stack Developer - Travel Booking System',
+                'company': 'Marhaba Travel Services',
+                'logo': 'marhaba.png',
+                'location': 'Portugal',
+                'period': '2026 - Present',
+                'description': [
+                    'Developed one-way and round-trip flight search and booking workflows with passenger management for adults, children and infants.',
+                    'Implemented mandatory passenger information including passport details, nationality, and emergency contact information.',
+                    'Built structured flight itinerary management covering outbound and return flights, departure/arrival times, baggage, cabin class, duration and stops.',
+                    'Developed booking lifecycle management covering booking, held status, payment, ticket processing, ticketing, cancellation, reissue and refund states.',
+                    'Implemented unique Marhaba booking references, PNR/provider references and individual passenger e-ticket numbers.',
+                    'Built a complete ticket reissue/exchange workflow, including new flight selection, fare difference, airline change penalties and new ticket generation.',
+                    'Implemented partial passenger reissue, enabling selected passengers to move to a new itinerary while remaining passengers retain their original itinerary.',
+                    'Developed split-PNR-ready workflows for selected-passenger reissues and refunds.',
+                    'Built dynamically generated professional PDF e-tickets using ReportLab, including itinerary, individual passenger ticket details, payment/exchange history, baggage information and fare policies.',
+                    'Created provider abstraction supporting a mock flight provider for development/testing and a structure prepared for integration with external supplier APIs.'
+                ]
+            },
+
+            # ===== TRUCK DISPATCHER PRO =====
+            {
+                'about_company': "Truck Dispatcher Pro is a standalone desktop ERP application for trucking, fleet and dispatch operations.",
+                'title': 'Python Desktop Application Developer',
+                'company': 'Truck Dispatcher Pro',
+                'logo': 'truck.png',
+                'location': 'Portugal',
+                'period': '2026 - Present',
+                'description': [
+                    'Developed a modular desktop ERP application for trucking, fleet and dispatch operations using Python, PyQt6, SQLAlchemy and SQLite.',
+                    'Built driver management functionality with database-backed CRUD operations.',
+                    'Developed modules for trucks, trailers, loads and dispatch operations.',
+                    'Designed relational database models using SQLAlchemy ORM and SQLite.',
+                    'Developed dispatch workflows connecting drivers, trucks, trailers and loads.',
+                    'Built an analytical management dashboard displaying operational and financial KPIs.',
+                    'Developed monthly financial visualization and invoice/dispatch status charts.',
+                    'Added dashboard views for recent dispatches, recent invoices and year-based reporting.',
+                    'Designed a modular Finance & Accounting architecture for integration with fleet operations.',
+                    'Structured the application for future Windows EXE and installer distribution.'
+                ]
+            },
+
+            # ===== MARHABA REMITTANCE MODULE =====
+            {
+                'about_company': "Marhaba Remittance / Money Transfer Module is part of the Marhaba Services platform, providing web-based remittance quotation and enquiry.",
+                'title': 'Python/Django Developer - Remittance Module',
+                'company': 'Marhaba Services',
+                'logo': 'marhaba.png',
+                'location': 'Portugal',
+                'period': '2026 - Present',
+                'description': [
+                    'Developed a web-based remittance quotation and enquiry module integrated into the Marhaba Services platform.',
+                    'Created customer-facing international money-transfer quotation workflows.',
+                    'Implemented country-based demo exchange-rate calculations.',
+                    'Created structured remittance enquiry and customer information forms.',
+                    'Designed the module for future integration with a live remittance provider API.',
+                    'Integrated the module into the broader Django services architecture.'
+                ]
+            },
+
+            # ===== SHARJAH NATIONAL TRAVEL - SAUDI ARABIA =====
             {
                 'about_company': "Leading UAE-based travel and business services organization operating a nationwide branch network.",
                 'title': 'Operations & Customer Experience Manager',
@@ -60,6 +153,8 @@ def home():
                     'Monitored operational performance through KPI-driven decision-making'
                 ]
             },
+
+            # ===== SHARJAH NATIONAL TRAVEL - UAE =====
             {
                 'about_company': "Leading UAE-based travel and business services organization operating a nationwide branch network.",
                 'title': 'Assistant Manager - Finance, Operations',
@@ -88,6 +183,8 @@ def home():
                     'Maintained accurate financial documentation and compliance'
                 ]
             },
+
+            # ===== MARHABA AVIATION =====
             {
                 'about_company': "Marhaba Aviation Pvt. Ltd. (General Sales Agent for Gulf Air) representing Gulf Air in Pakistan, providing airline sales, financial administration, and commercial support services.",
                 'title': 'Finance Supervisor',
@@ -100,6 +197,43 @@ def home():
                     'Managed sales reporting for 140+ travel agency partners',
                     'Controlled daily cash transactions exceeding PKR 4 million',
                     'Prepared financial reports and supported airline operational reporting'
+                ]
+            }
+        ],
+
+        'software_projects': [
+            {
+                'title': 'Marhaba Super Market - Full-Stack Django Platform',
+                'technologies': ['Python', 'Django', 'PostgreSQL', 'HTML5', 'CSS3', 'JavaScript', 'Git', 'Render'],
+                'project_url': 'https://marhaba-market-services.com/',
+                'description': [
+                    'Designed and developed a multi-module business platform integrating e-commerce and service management',
+                    'Built customer accounts, product catalog, inventory, shopping cart, wishlist, orders, payments, coupons and reviews',
+                    'Developed Marhaba Services platform for travel, remittance and other customer services',
+                    'Created a CV Builder for professional CV output from structured user data',
+                    'Deployed on Render with PostgreSQL and Git/GitHub version control'
+                ]
+            },
+            {
+                'title': 'Marhaba Travel Booking & Ticketing System',
+                'technologies': ['Python', 'Django', 'PostgreSQL', 'ReportLab', 'Git'],
+                'description': [
+                    'End-to-end airline reservation, ticketing and post-booking management system',
+                    'One-way and round-trip flight search, booking, and passenger management',
+                    'Complete booking lifecycle: hold, payment, ticketing, cancellation, reissue and refund',
+                    'PDF e-ticket generation with ReportLab including itinerary and passenger details',
+                    'Split-PNR-ready workflows for partial reissues and refunds'
+                ]
+            },
+            {
+                'title': 'Truck Dispatcher Pro - Desktop Fleet ERP',
+                'technologies': ['Python', 'PyQt6', 'SQLAlchemy', 'SQLite'],
+                'description': [
+                    'Modular desktop ERP for trucking, fleet and dispatch operations',
+                    'Driver, truck, trailer, load and dispatch management modules',
+                    'Analytical dashboard with operational and financial KPIs',
+                    'Monthly financial visualization and invoice/dispatch status charts',
+                    'Structured for Windows EXE and installer distribution'
                 ]
             }
         ],
@@ -137,14 +271,14 @@ def home():
             ]
         },
 
-        'technologies': ['Python', 'Flask', 'JavaScript', 'SQL', 'Oracle ERP', 'Amadeus', 'Sabre', 'Galileo', 'Django',
-                         'Git', 'HTML5', 'CSS3'],
+        'technologies': ['Python', 'Django', 'Flask', 'JavaScript', 'SQL', 'PostgreSQL',
+                         'Oracle ERP', 'Amadeus', 'Sabre', 'Galileo', 'Git', 'HTML5', 'CSS3'],
 
         'languages': [
             {'name': 'English', 'level': 'Fluent'},
             {'name': 'Arabic', 'level': 'Professional'},
             {'name': 'Urdu', 'level': 'Native'},
-            {'name': 'Portuguese', 'level': 'Intermediate'},
+            {'name': 'Portuguese', 'level': 'Intermediate'}
         ],
 
         'personal': {
@@ -161,13 +295,13 @@ def home():
             'linkedin': 'https://www.linkedin.com/feed/',
             'github': 'https://github.com/your-profile',
             'email': 'mailto:eman.awad.hamdaan.pt@gmail.com',
-            'whatsapp': 'https://wa.me/351920008127'  # ← ADD THIS
+            'whatsapp': 'https://wa.me/351920008127'
         }
     }
     return render_template('index.html', **context)
 
 
-# ===== CONTACT ROUTE (Using smtplib with better error handling) =====
+# ===== CONTACT ROUTE =====
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
@@ -221,7 +355,7 @@ def contact():
 
     return render_template('contact.html',
                            name='Muhammad Awad Yasin',
-                           title='Operations & Business Support Manager')
+                           title='Operations & Business Support Manager | Full-Stack Developer')
 
 
 if __name__ == '__main__':

@@ -5,13 +5,14 @@
 <nav class="navbar glass">
     <div class="nav-container">
         <div class="nav-logo">
-            <a href="#hero">M A Y</a>
+            <a href="#hero">AY</a>
         </div>
         <ul class="nav-menu">
             <li><a href="#hero">Home</a></li>
             <li><a href="#stats">Stats</a></li>
             <li><a href="#target">Targets</a></li>
             <li><a href="#experience">Experience</a></li>
+            <li><a href="#software">Software</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="/contact">Message Me</a></li>
@@ -29,7 +30,7 @@
         <div class="hero-content">
             <div class="hero-badge">Open to Opportunities</div>
             <h1 class="hero-title">
-                <span class="greeting">👋 Welcome to my Page </span>
+                <span class="greeting">👋 Welcome to my Page</span>
                 <span class="name-gradient">{{ name }}</span>
             </h1>
             <div class="typing-wrapper">
@@ -37,7 +38,6 @@
                 <span class="cursor">|</span>
             </div>
             <p class="hero-description">{{ summary }}</p>
-
             <div class="hero-buttons">
                 <a href="#experience" class="btn-primary">View My Work</a>
                 <a href="{{ url_for('static', filename='CV.pdf') }}" download class="btn-secondary">
@@ -49,18 +49,12 @@
                 <a href="{{ links.whatsapp }}" target="_blank" class="btn-whatsapp">
                     📱 WhatsApp
                 </a>
-           </div>
+            </div>
         </div>
-
         <div class="hero-image">
             <div class="profile-wrapper floating">
                 <img src="{{ url_for('static', filename='images/cvpic.png') }}" alt="{{ name }}" class="profile-pic">
                 <div class="profile-ring"></div>
-
-                <!-- TYPING ANIMATION UNDER PROFILE PICTURE -->
-                <div style="text-align: center; margin-top: 15px;">
-                    <h2 style="font-size: 1.2rem; font-weight: 500; margin: 0;">Other Skills <span id="typed-text" style="color: #00b894; font-weight: 700;"></span></h2>
-                </div>
             </div>
         </div>
     </div>
@@ -133,22 +127,19 @@
                                     <span class="company-name">{{ job.company }}</span>
                                 </div>
                                 <div class="company-location">📍 {{ job.location }}</div>
-                             </div>
-                            <span class="timeline-date">{{ job.period }}</span>
-
-                            <div class="timeline-content glass">
-
-                                <div class="watermark-logo">
-                                    {{ job.company[:0].upper() }}
-                                </div>
-
-                                <div class="timeline-header">
-                                </div>
                             </div>
+                            <span class="timeline-date">{{ job.period }}</span>
                         </div>
                         {% if job.about_company %}
                             <div class="about-company">
                                 📌 {{ job.about_company }}
+                            </div>
+                        {% endif %}
+                        {% if job.project_urls %}
+                            <div class="project-links">
+                                {% for link in job.project_urls %}
+                                    <a href="{{ link.url }}" target="_blank" class="project-link">{{ link.name }}</a>
+                                {% endfor %}
                             </div>
                         {% endif %}
                         <ul class="achievement-list">
@@ -159,6 +150,44 @@
                     </div>
                 </div>
             {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ===== SOFTWARE DEVELOPMENT ===== -->
+<section id="software" class="software-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Tech & Innovation</span>
+            <h2 class="section-title">💻 Software & Web Development</h2>
+            <p class="section-subtitle">Combining business expertise with modern technology</p>
+        </div>
+        <div class="software-grid">
+            {% for project in software_projects %}
+                <div class="software-card glass">
+                    <div class="software-icon">🚀</div>
+                    <h3 class="software-title">{{ project.title }}</h3>
+                    <div class="software-tech">
+                        {% for tech in project.technologies %}
+                            <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                    {% if project.project_url %}
+                        <a href="{{ project.project_url }}" target="_blank" class="project-link" style="display: inline-block; margin-bottom: 10px;">🔗 Visit Project</a>
+                    {% endif %}
+                    <ul class="software-list">
+                        {% for point in project.description %}
+                            <li>{{ point }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="software-note glass">
+            <p>
+                <strong>💡 Pro Tip:</strong> With 20+ years of operations experience and growing Python development skills,
+                I bridge the gap between <strong>business needs</strong> and <strong>technical solutions</strong>.
+            </p>
         </div>
     </div>
 </section>
@@ -275,13 +304,6 @@
     </div>
 </section>
 
-<!-- ===== FLOATING WHATSAPP ICON ===== -->
-<a href="https://wa.me/351920008127" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white" width="30" height="30">
-        <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-    </svg>
-</a>
-
 <!-- ===== CONTACT / FOOTER ===== -->
 <footer id="contact" class="footer">
     <div class="container">
@@ -290,11 +312,11 @@
                 <h3>{{ name }}</h3>
                 <p>{{ title }}</p>
             </div>
-           <div class="footer-links">
+            <div class="footer-links">
                 <a href="{{ links.linkedin }}" target="_blank" class="footer-link">🔗 LinkedIn</a>
                 <a href="{{ links.github }}" target="_blank" class="footer-link">🐙 GitHub</a>
                 <a href="{{ links.email }}" class="footer-link">✉️ Email</a>
-<!--                <a href="{{ links.whatsapp }}" target="_blank" class="footer-link whatsapp-link">💬 WhatsApp</a>-->
+                <a href="{{ links.whatsapp }}" target="_blank" class="footer-link whatsapp-link">💬 WhatsApp</a>
                 <a href="{{ url_for('static', filename='CV.pdf') }}" download class="footer-link btn-download">📄 Download CV</a>
             </div>
         </div>
@@ -303,51 +325,4 @@
         </div>
     </div>
 </footer>
-
-<!-- ===== JAVASCRIPT FOR DARK MODE & TYPING ===== -->
-<!-- Load Typed.js Library -->
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-
-        // --- 1. DARK MODE TOGGLE ---
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-
-        // Check saved preference
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme === 'dark') {
-            body.classList.add('dark-mode');
-            themeToggle.textContent = '☀️';
-        }
-
-        // Click handler
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            if (body.classList.contains('dark-mode')) {
-                themeToggle.textContent = '☀️';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                themeToggle.textContent = '🌙';
-                localStorage.setItem('theme', 'light');
-            }
-        });
-
-        // --- 2. TYPING ANIMATION ---
-        new Typed('#typed-text', {
-            strings: [
-                'Python Full Stack Developer (on going) ',
-                'Web Page Designer for SME',
-                'Data Analyst',
-            ],
-            typeSpeed: 60,
-            backSpeed: 40,
-            backDelay: 1500,
-            loop: true
-        });
-
-    });
-</script>
-
 {% endblock %}

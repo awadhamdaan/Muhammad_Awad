@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{{ name }} - Executive Portfolio{% endblock %}</title>
 
-
-
     <!-- Dark Mode Toggle Button -->
-<button id="themeToggle" style="position: fixed; top: 20px; right: 20px; padding: 10px 15px; border-radius: 50px; border: none; cursor: pointer; font-size: 1.2rem; background: var(--card-bg); color: var(--text-color); box-shadow: var(--shadow); z-index: 1000;">
-    🌙
-</button>
-
+    <button id="themeToggle" style="position: fixed; top: 20px; right: 20px; padding: 10px 15px; border-radius: 50px; border: none; cursor: pointer; font-size: 1.2rem; background: var(--card-bg); color: var(--text-color); box-shadow: var(--shadow); z-index: 1000;">
+        🌙
+    </button>
 
     <!-- ===== CSS FILES ===== -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 
-    <!-- ===== FAVICON ===== -->
+    <!-- ===== FAVICON - YOUR PHOTO ===== -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+
+    <!-- ===== FAVICON FALLBACK (if your photo doesn't load) ===== -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👤</text></svg>">
 </head>
 <body>
@@ -30,3 +31,5 @@
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>
+
+
