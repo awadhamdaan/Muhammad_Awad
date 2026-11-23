@@ -62,7 +62,7 @@ def home():
                 'company': 'Ideas Bureau',
                 'logo': 'ideasbureau.png',
                 'location': 'Saudi Arabia (Remote)',
-                'period': '2024 - Present',
+                'period': ' Present',
                 'project_urls': [
                     {'name': '💼 Staff ERP UI', 'url': 'https://ideasbureau-ats-crm-erp.onrender.com/login/'},
                     {'name': '👤 Candidate UI', 'url': 'https://ideasbureau-ats-crm-erp.onrender.com/candidate/login/'}
