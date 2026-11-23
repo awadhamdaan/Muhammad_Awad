@@ -34,6 +34,46 @@ def home():
         ],
 
         'experience': [
+            # ===== NEW: CSB RIDDERKERK =====
+            {
+                'about_company': "CSB Energy Technology (EMEA) B.V. is a leading global manufacturer of Valve-Regulated Lead-Acid (VRLA) batteries, serving telecommunications, UPS, solar, and security applications across Europe from its headquarters in Ridderkerk, Netherlands.",
+                'title': 'Forklift Operator - Quality Control',
+                'company': 'CSB Energy Technology (EMEA) B.V.',
+                'logo': 'csb.png',
+                'location': 'Keurmeesterstraat 28-30, 2984 BA Ridderkerk, Netherlands',
+                'period': 'Nov 2024 - Present',
+                'description': [
+                    'Operate forklifts to safely transport batteries and materials within the Quality Control department.',
+                    'Conduct thorough quality control inspections on batteries prior to shipping to customers.',
+                    'Perform rework and corrective actions on batteries to ensure compliance with quality standards.',
+                    'Manage battery charging and discharging processes according to safety and operational guidelines.',
+                    'Maintain accurate records of quality checks and inventory movements.',
+                    'Adhere to strict safety protocols and warehouse operational standards.'
+                ]
+            },
+
+            # ===== IDEAS BUREAU CRM/ATS SYSTEM =====
+            {
+                'about_company': "Ideas Bureau is a Saudi Arabia-based business solutions provider. I developed a comprehensive CRM and Applicant Tracking System (ATS) similar to LOXO, streamlining their recruitment, candidate management, and business development operations.",
+                'title': 'Full-Stack Python/Django Developer',
+                'company': 'Ideas Bureau',
+                'logo': 'ideasbureau.png',
+                'location': 'Saudi Arabia (Remote)',
+                'period': '2024 - Present',
+                'project_urls': [
+                    {'name': '💼 Staff ERP UI', 'url': 'https://ideasbureau-ats-crm-erp.onrender.com/login/'},
+                    {'name': '👤 Candidate UI', 'url': 'https://ideasbureau-ats-crm-erp.onrender.com/candidate/login/'}
+                ],
+                'description': [
+                    'Developed a comprehensive CRM and Applicant Tracking System (ATS) for Ideas Bureau, functioning similarly to LOXO.',
+                    'Designed and implemented dual portals: a secure Staff ERP workspace for internal teams and a Candidate Portal for applicant tracking and profile management.',
+                    'Built robust backend logic using Python/Django to handle complex recruitment workflows, user authentication, and data management.',
+                    'Created responsive, user-friendly frontends for both internal staff and external candidates using HTML, CSS, and JavaScript.',
+                    'Implemented secure login systems, role-based access control, and session management for both portals.',
+                    'Deployed the production application using Render, ensuring high availability and performance.'
+                ]
+            },
+
             # ===== CURRENT ROLE =====
             {
                 'about_company': "Lifecent Unipessoal is a Portugal-based parent company overseeing multiple business divisions, including LTMT Travels & Money Transfers, which provides travel management, visa consultancy, foreign exchange, and international money transfer services, and Uma Iniciativa, which specializes in workforce recruitment, labor supply, international hiring, work permit processing, and staffing solutions.",
@@ -203,6 +243,18 @@ def home():
 
         'software_projects': [
             {
+                'title': 'Ideas Bureau - CRM & ATS Platform',
+                'technologies': ['Python', 'Django', 'PostgreSQL', 'HTML5', 'CSS3', 'JavaScript', 'Git', 'Render'],
+                'project_url': 'https://ideasbureau-ats-crm-erp.onrender.com/login/',
+                'description': [
+                    'Developed a comprehensive CRM and Applicant Tracking System (ATS) similar to LOXO',
+                    'Designed and implemented dual portals: Staff ERP workspace and Candidate Portal',
+                    'Built robust backend logic for complex recruitment workflows and data management',
+                    'Implemented secure login systems, role-based access control, and session management',
+                    'Deployed the production application using Render'
+                ]
+            },
+            {
                 'title': 'Marhaba Super Market - Full-Stack Django Platform',
                 'technologies': ['Python', 'Django', 'PostgreSQL', 'HTML5', 'CSS3', 'JavaScript', 'Git', 'Render'],
                 'project_url': 'https://marhaba-market-services.com/',
@@ -285,17 +337,17 @@ def home():
             'nationality': 'Pakistan',
             'dob': '04 Jul 1982',
             'visa_status': 'Residence Card Holder',
-            'country_of_residence': 'Portugal',
+            'country_of_residence': 'Netherlands',
             'marital_status': 'Married',
-            'driving_license': 'Light Vehicle, Motor Bike',
-            'contact_number': '+351-920008127'
+            'driving_license': 'Light Vehicle, Motor Bike, ForkLift, Reach Truck',
+            'contact_number': '+31-616902020'
         },
 
         'links': {
             'linkedin': 'https://www.linkedin.com/feed/',
             'github': 'https://github.com/your-profile',
             'email': 'mailto:eman.awad.hamdaan.pt@gmail.com',
-            'whatsapp': 'https://wa.me/351920008127'
+            'whatsapp': 'https://wa.me/31616902020'
         }
     }
     return render_template('index.html', **context)
