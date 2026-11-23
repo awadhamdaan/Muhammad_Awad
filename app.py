@@ -54,7 +54,10 @@ def home():
 
             # ===== IDEAS BUREAU CRM/ATS SYSTEM =====
             {
-                'about_company': "Ideas Bureau is a Saudi Arabia-based business solutions provider. I developed a comprehensive CRM and Applicant Tracking System (ATS) similar to LOXO, streamlining their recruitment, candidate management, and business development operations.",
+                'about_company': "Ideas Bureau is a Saudi Arabia-based business solutions provider. I developed a comprehensive CRM and Applicant Tracking System (ATS) similar to LOXO, streamlining their recruitment, candidate management, and business development operations.<br><br>"
+                                 "<b>🔑 Test Credentials for Recruiters:</b><br>"
+                                 "<b>Candidate Portal:</b> Email: <code>eman.awad.hamdaan.pt@gmail.com</code> | Password: <code>Sntta868679</code><br>"
+                                 "<b>Staff ERP:</b> Username: <code>eman</code> | Password: <code>Sntta8686794</code>",
                 'title': 'Full-Stack Python/Django Developer',
                 'company': 'Ideas Bureau',
                 'logo': 'ideasbureau.png',
